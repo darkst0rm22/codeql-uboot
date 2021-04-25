@@ -1,8 +1,6 @@
-
 import cpp
 
-from Function func, FunctionCall fcall
+from FunctionCall fcall
 where
-    func.getName() = "memcpy" and
-    fcall.getTarget() = func
+    fcall.getTarget().getName() = "memcpy"
 select fcall, "a function called is memcpy"
